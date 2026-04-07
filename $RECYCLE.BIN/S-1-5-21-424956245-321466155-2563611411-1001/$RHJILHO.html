@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notice</title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .body-container {
+        max-width: 1080px;
+        margin: 2rem auto;
+      }
+      .cn-title {
+        margin-top: 2.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #0568cc;
+      }
+      .checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .checkbox-check {
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+
+      .rights-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff6f6;
+        padding: 20px;
+        height: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        position: relative;
+      }
+
+      .rights-section h5 {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .rights-section p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .rights-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+      }
+
+      .image-placeholder {
+        width: 149px;
+        height: 162px;
+        background-color: #ccc;
+      }
+
+      .consent-text {
+        font-size: 14px;
+
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .consent-text p {
+        margin-bottom: 12px;
+      }
+
+      .sticky-contaner {
+        background-color: #f4f4f4;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .sticky-contaner2 {
+        max-width: 1080px;
+        margin: auto;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .actions button {
+        padding: 8px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        width: 189px;
+        margin-left: 1rem;
+      }
+
+      .accept {
+        background: #38b918;
+        color: white;
+      }
+
+      .deny {
+        background: #ee734b;
+        color: white;
+      }
+      .section-top {
+        background-color: #eeeeee;
+      }
+
+      .section-header {
+        padding: 4px 12px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        gap: 16px;
+      }
+
+      .section-header h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .section-header input[type="checkbox"] {
+        display: flex;
+        margin: 0;
+        cursor: pointer;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+
+      .dropdown-checkbox {
+        cursor: pointer;
+        height: 1.2rem;
+        width: 1.2rem;
+      }
+
+      .dropdown {
+        display: none;
+      }
+
+      .dropdown.active {
+        display: block;
+      }
+
+      .dropdown-item {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        background-color: #f6f8ff;
+        margin-left: 25px;
+        padding: 16px 8px;
+      }
+
+      /* .dropdown-item:last-child {
+        margin-bottom: 0;
+      } */
+
+      .personal-data-buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .personal-data-buttons button {
+        border: 1px solid #1d478e;
+        background: #fff;
+        border-radius: 16px;
+        padding: 6px 12px;
+        color: #1d478e;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .personal-data-buttons button.selected {
+        background: #1d478e;
+        color: #fff;
+      }
+
+      .consent-duration {
+        font-size: 12px;
+        color: #3e3e3e;
+      }
+
+      .dropdown-lable {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 8px;
+        margin-bottom: 16px;
+        position: relative;
+      }
+      .dropdown-item p {
+        margin-left: 10px;
+        margin-right: 80px;
+        margin-bottom: 16px;
+        position: relative;
+      }
+      .btn-title {
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .btn-container {
+        margin-left: 10px;
+      }
+      .question-svg {
+        display: flex;
+        gap: 2px;
+      }
+      .exclamation-svg {
+        display: flex;
+        gap: 2px;
+      }
+
+      /* Container for the SVG and Dropdown */
+      .dropdown-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* The dropdown menu */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 35px;
+        left: -25px;
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 110px;
+        z-index: 1000;
+        font-size: 14px;
+      }
+
+      /* Dropdown items */
+      .dropdown-menu div {
+        padding: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        border-bottom: 0.5px solid #d3d3d3;
+      }
+
+      /* Hover effect */
+      .dropdown-menu div:hover {
+        background: #f0f0f0;
+      }
+
+      /* Responsive styles for medium devices */
+      @media screen and (max-width: 1024px) {
+        .body-container {
+          max-width: 95%;
+          margin: 1.5rem auto;
+          padding: 0 1rem;
+        }
+        .sticky-contaner2 {
+          max-width: 95%;
+          margin: auto;
+          padding: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .main-heading {
+          font-size: 30px;
+        }
+
+        .rights-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 80%;
+        }
+        .rights-text p {
+          font-size: 13px;
+          color: #555;
+        }
+
+        .image-placeholder {
+          width: 134px;
+          height: 144px;
+          background-color: #ccc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-container">
+      <main style="display: flex; justify-content: center; align-items: center">
+        <div>
+          <h1 class="main-heading" style="text-align: center">
+            Digital Personal Data Protection Act, 2023
+          </h1>
+          <p style="margin-top: 10px; text-align: center">
+            Trust Bank is requesting your consent for data collection and
+            processing to enhance banking services and ensure secure
+            transactions. <br />
+            Please provide consent for us to collect and process your
+            information for the purposes outlined below.
+          </p>
+        </div>
+      </main>
+      <h2 class="cn-title">Consent Notice</h2>
+      <div style="border: 1px solid gray; padding: 2rem">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <h3>Manage My Consents</h3>
+          <div
+            style="display: flex; align-items: center; gap: 1.5rem"
+            class="dropdown-container"
+          >
+            <!-- <div>Image</div> -->
+            <div>
+              <svg
+                version="1.2"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="40"
+                height="40"
+              >
+                <defs>
+                  <image
+                    id="img2"
+                    href="data:image/png;base64,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"
+                  />
+                </defs>
+                <style></style>
+                <use href="#img2" x="36" y="53" />
+              </svg>
+            </div>
+            <div
+              style="height: 20px; width: 20px; cursor: pointer"
+              id="lang-svg"
+            >
+              <svg
+                version="1.2"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="40"
+                height="40"
+                style="margin-top: -10px; margin-left: -14px"
+              >
+                <defs>
+                  <image
+                    id="img1"
+                    href="data:image/png;base64,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"
+                  />
+                </defs>
+                <style></style>
+                <use href="#img1" x="0" y="0" />
+              </svg>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu">
+              <div onclick="selectLanguage('English')">English</div>
+              <div onclick="selectLanguage('Spanish')">Spanish</div>
+              <div onclick="selectLanguage('French')">French</div>
+              <div onclick="selectLanguage('German')">German</div>
+            </div>
+          </div>
+        </div>
+        <div class="checkboxes">
+          <div id="preferences-container"></div>
+        </div>
+        <div class="rights-section">
+          <div class="rights-text">
+            <h5>
+              Your Rights under Digital Personal Data Protection Act, 2023
+            </h5>
+            <p>
+              Section 11 - Right to access: You can request information about
+              your personal data.
+            </p>
+            <p>
+              Section 12 - Right to rectification: You can request corrections
+              to inaccurate data.
+            </p>
+            <p>
+              Section 13 - Right to erasure: You can request the deletion of
+              personal data.
+            </p>
+            <p>
+              Consent managers for any violations of their rights or
+              non-compliance with the DPDPA.
+            </p>
+          </div>
+          <div class="image-placeholder"></div>
+        </div>
+        <div class="consent-text">
+          <p>
+            I consent to Trust Bank collecting, using, sharing, and processing
+            my personal information for the specified purposes. I have reviewed
+            the information collected, understood the consent purpose, and terms
+            & conditions. I confirm that my consent is given freely,
+            specifically for the stated purposes, based on a clear understanding
+            of how my data will be used, and without any conditions.
+          </p>
+
+          <p>
+            I can withdraw my consent for processing of my personal data at any
+            time, by accessing the preference center or consent manager. If I do
+            so, my personal data will be erased, unless there is any legal
+            requirement to retain it.
+          </p>
+
+          <p>
+            I understand that my data will be processed according to the Digital
+            Personal Data Protection Act, 2023. I declare that the information I
+            provided is accurate and true.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-contaner">
+      <div class="sticky-contaner2">
+        <p style="font-size: 18px">Do you agree to provide consent ?</p>
+        <div class="actions">
+          <button class="deny" id="rejectConsent">
+            <a href="#" style="color: white; text-decoration: none">No</a>
+          </button>
+          <button class="accept" id="submitConsent">
+            <a href="#" style="color: white; text-decoration: none">Yes</a>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const preferenceData = [
+        {
+          title: "Banking Services & Account Management",
+          duration: "365 Days",
+          consents: [
+            {
+              title: "Account Opening & Management",
+              description:
+                "We request your consent to collect personal information such as your full name, date of birth, address, and identification details to open and maintain your bank account.",
+              dataElements: [
+                "Full Name",
+                "Date of Birth",
+                "Address",
+                "Government ID (Aadhaar/PAN)",
+              ],
+            },
+            {
+              title: "Customer Support & Verification",
+              description:
+                "To provide seamless support, we collect your email, phone number, and account details for identity verification and communication purposes.",
+              dataElements: [
+                "Email Address",
+                "Phone Number",
+                "Account Number",
+                "Identification Proof",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Loan & Credit Card Processing",
+          duration: "730 Days",
+          consents: [
+            {
+              title: "Loan & Mortgage Application",
+              description:
+                "We require your financial details, credit history, and employment information to process loan and mortgage applications.",
+              dataElements: [
+                "Salary Slips",
+                "Bank Statements",
+                "Credit Score Report",
+                "Employment Details",
+              ],
+            },
+            {
+              title: "Credit Card Approval & Credit Scoring",
+              description:
+                "We collect your income details, existing liabilities, and repayment history to determine your creditworthiness for issuing credit cards.",
+              dataElements: [
+                "Annual Income",
+                "Existing Loan Liabilities",
+                "Credit Score",
+                "Repayment History",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Fraud Prevention & Risk Management",
+          duration: "730 Days",
+          consents: [
+            {
+              title: "Transaction Monitoring for Fraud Detection",
+              description:
+                "To protect your account, we analyze transaction patterns and flag suspicious activities for fraud prevention.",
+              dataElements: [
+                "Transaction History",
+                "Geolocation Data",
+                "Device ID",
+                "IP Address",
+              ],
+            },
+            {
+              title: "AML (Anti-Money Laundering) Compliance",
+              description:
+                "We track high-value transactions and collect KYC documents to comply with anti-money laundering regulations.",
+              dataElements: [
+                "High-Value Transactions",
+                "Source of Funds",
+                "KYC Documents",
+                "Beneficiary Details",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Marketing & Personalized Banking Offers",
+          duration: "365 Days",
+          consents: [
+            {
+              title: "Personalized Offers & Promotions",
+              description:
+                "We use your transaction history and preferences to provide customized offers and promotions.",
+              dataElements: [
+                "Transaction Patterns",
+                "Spending Behavior",
+                "Preferred Merchants",
+                "Marketing Preferences",
+              ],
+            },
+            {
+              title: "Financial Advisory & Investment Services",
+              description:
+                "We analyze your financial portfolio to offer investment advice and insurance recommendations.",
+              dataElements: [
+                "Investment Portfolio",
+                "Savings Account Details",
+                "Insurance Policies",
+                "Risk Appetite",
+              ],
+            },
+          ],
+        },
+      ];
+
+      // Function to create SVG icons (optional)
+      function createSVGIcon(type) {
+        if (type === "question") {
+          return `
+            <svg width="14" height="12" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 9.00001C9.00011 8.45004 9.15139 7.91068 9.43732 7.44088C9.72325 6.97108 10.1328 6.58891 10.6213 6.33616C11.1097 6.08341 11.6583 5.96979 12.2069 6.00773C12.7556 6.04566 13.2833 6.23369 13.7323 6.55126C14.1813 6.86883 14.5344 7.30372 14.7529 7.8084C14.9715 8.31308 15.0471 8.86813 14.9715 9.41288C14.8959 9.95763 14.6721 10.4711 14.3244 10.8972C13.9767 11.3234 13.5185 11.6457 13 11.829C12.7074 11.9325 12.4541 12.1241 12.275 12.3775C12.0959 12.6309 11.9998 12.9337 12 13.244V14.5"
+                  stroke="#8a8a8a" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              <path d="M12 18V18.5001" stroke="#8a8a8a" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 23.25C18.2132 23.25 23.25 18.2132 23.25 12C23.25 5.7868 18.2132 0.75 12 0.75C5.7868 0.75 0.75 5.7868 0.75 12C0.75 18.2132 5.7868 23.25 12 23.25Z"
+                    stroke="#8a8a8a" stroke-width="1.5" stroke-miterlimit="10"></path>
+            </svg>
+          `;
+        } else if (type === "exclamation") {
+          return `
+            <svg width="16" height="15" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg" fill="#000000">
+              <path d="M12,2.25A9.75,9.75,0,1,0,21.75,12,9.761,9.761,0,0,0,12,2.25Zm0,18A8.25,8.25,0,1,1,20.25,12,8.259,8.259,0,0,1,12,20.25ZM13,16a1,1,0,1,1-1-1A1,1,0,0,1,13,16Zm-1.75-4V8a.75.75,0,0,1,1.5,0v4a.75.75,0,0,1-1.5,0Z"
+                    fill="#8a8a8a"></path>
+            </svg>
+          `;
+        }
+      }
+
+      function createConsentDropdown(consent, index) {
+        const consentItem = document.createElement("div");
+        consentItem.classList.add("dropdown-item");
+
+        consentItem.innerHTML = `
+        <label class="dropdown-lable">
+          <div style="position: absolute; top: ${
+            index === 0 ? "-140%" : "-1000%"
+          }; left: -2.6rem">
+            <div style="width: 5px; height:${
+              index === 0 ? "7rem" : "15rem"
+            }; background-color: #eeeeee;"></div>
+            <div style="width: 1.5rem; height: 5px; background-color: #eeeeee;"></div>
+          </div>
+          <strong style="font-size: 14px">${consent.title}</strong>
+          <input type="checkbox" class="dropdown-checkbox" />
+        </label>
+        <p style="font-size: 12px">${consent.description}</p>
+        <div class="btn-container">
+          <div class="exclamation-svg">
+            <div class="btn-title">Personal Data</div>
+            ${createSVGIcon("exclamation")}
+          </div>
+          <div class="personal-data-buttons">
+            ${consent.dataElements
+              .map(
+                (element, idx) =>
+                  `<button class="single-select-button" type="button">${element}</button>`
+              )
+              .join("")}
+          </div>
+        </div>
+    `;
+
+        return consentItem;
+      }
+
+      // Function to create a single section
+      function createSection(section) {
+        const sectionDiv = document.createElement("div");
+        sectionDiv.classList.add("section");
+
+        sectionDiv.innerHTML = `
+      <div class="section-top" style="margin: 12px 0px">
+        <div class="section-header">
+          <h3 style="font-size: 14px">${section.title}</h3>
+          <div class="section-header">
+            <div class="question-svg">
+              <p class="consent-duration">Consent Duration: ${
+                section.duration
+              }</p>
+              ${createSVGIcon("question")}
+            </div>
+            <input type="checkbox" class="main-checkbox" />
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        ${section.consents
+          .map(
+            (consent, index) => createConsentDropdown(consent, index).outerHTML
+          )
+          .join("")}
+      </div>
+    `;
+
+        // Add event listeners for dropdown toggle and main checkbox
+        const sectionHeader = sectionDiv.querySelector(".section-header");
+        const dropdown = sectionDiv.querySelector(".dropdown");
+        const mainCheckbox = sectionDiv.querySelector(".main-checkbox");
+        const dropdownCheckboxes =
+          sectionDiv.querySelectorAll(".dropdown-checkbox");
+
+        // Toggle dropdown visibility
+        sectionHeader.addEventListener("click", (e) => {
+          if (e.target.tagName.toLowerCase() !== "input") {
+            dropdown.classList.toggle("active");
+          }
+        });
+
+        // Sync main checkbox with dropdown checkboxes
+        mainCheckbox.addEventListener("change", () => {
+          const isChecked = mainCheckbox.checked;
+          dropdownCheckboxes.forEach((checkbox) => {
+            checkbox.checked = isChecked;
+          });
+        });
+
+        // Add event listeners for buttons to allow multiple selections
+        sectionDiv
+          .querySelectorAll(".single-select-button")
+          .forEach((button) => {
+            button.addEventListener("click", () => {
+              button.classList.toggle("selected"); // Toggle selection state
+              console.log(
+                `${button.innerText} is ${
+                  button.classList.contains("selected")
+                    ? "selected"
+                    : "deselected"
+                }`
+              );
+            });
+          });
+
+        return sectionDiv;
+      }
+
+      // Function to initialize the preferences rendering
+      function renderPreferences(data) {
+        const container = document.getElementById("preferences-container");
+        container.innerHTML = "";
+
+        data.forEach((section) => {
+          const sectionElement = createSection(section);
+          container.appendChild(sectionElement);
+        });
+      }
+      // Initialize rendering on DOMContentLoaded
+      document.addEventListener("DOMContentLoaded", () => {
+        renderPreferences(preferenceData);
+      });
+
+      function getTokenFromURL() {
+        const url = window.location.href;
+        const tokenPart = url.split("/").pop(); // Get the last part
+        return tokenPart.split("?")[0]; // Remove query parameters
+      }
+
+      // Extract token and log it
+      const token = getTokenFromURL();
+      console.log("Extracted Token:", token);
+
+      // Function to submit consent
+      async function submitConsent() {
+        console.log("Submitting consent...");
+
+        if (!token) {
+          document.getElementById("responseMessage").textContent =
+            "❌ Token not found in URL!";
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            "https://consent.catax.app/submit-consent",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ token: token }),
+            }
+          );
+
+          const result = await response.json();
+          if (response.ok) {
+            console.log("Consent submitted successfully:", result);
+            if (window.opener) {
+              window.opener.postMessage(
+                {
+                  auth_status: "200",
+                  message: result.redirection_url,
+                  consent_submitted: true,
+                },
+                "*"
+              );
+            }
+
+            // Replace the current page with a new message
+            document.body.innerHTML = `
+            <div style="max-width: 1080px;  margin: 2rem auto; display: flex; flex-direction: column; align-items: center;">
+            <div style="margin-top: 5px;
+        margin-bottom: 5px;">
+              <img src="https://i.ibb.co/jvyG1hp/inmconcur.png" alt="Consent Icon"  style="width: 150px;
+        height: 160px;"/>
+            </div>
+            <h1 style="font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 26px;">Your Consent has been submitted.</h1>
+            <p style="font-size: 1rem;
+        color: #666;
+        margin: 20px 0;">Thank you for your consent and trust</p>
+            <a style="display: inline-block;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;" href="https://dpar.vercel.app">Manage Your Consents</a>
+            <div class="redirect-timer">
+              <p style="margin-top: 115px;
+        margin-bottom: 26px;
+        font-size: 0.9rem;
+        color: #888;">You will be redirected in <span id="countdown">5</span> seconds...</p>
+            </div>
+          </div>
+          `;
+
+            // Countdown timer
+            let timeLeft = 5;
+            const countdownElement = document.getElementById("countdown");
+            const countdownInterval = setInterval(() => {
+              timeLeft -= 1;
+              countdownElement.textContent = timeLeft;
+              if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.close();
+              }
+            }, 1000);
+          } else {
+            console.error("Failed to submit consent:", result);
+          }
+        } catch (error) {
+          console.error("Failed to submit consent:", error);
+        }
+      }
+
+      // Event listener for the submit button
+      document
+        .getElementById("submitConsent")
+        .addEventListener("click", submitConsent);
+
+      // language dropdown
+      document.addEventListener("DOMContentLoaded", function () {
+        const svgIcon = document.getElementById("lang-svg");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        // Toggle dropdown on click
+        svgIcon.addEventListener("click", function (event) {
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+          event.stopPropagation(); // Prevent click from closing immediately
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !svgIcon.contains(event.target) &&
+            !dropdownMenu.contains(event.target)
+          ) {
+            dropdownMenu.style.display = "none";
+          }
+        });
+      });
+
+      // Function to handle language selection
+      function selectLanguage(language) {
+        console.log("Selected language:", language);
+        alert("You selected: " + language);
+        document.getElementById("dropdown-menu").style.display = "none"; // Hide dropdown
+      }
+
+      // Event listener for the "No" button
+      document
+        .getElementById("rejectConsent")
+        .addEventListener("click", function () {
+          // Replace the entire page content with a message.
+          document.body.innerHTML = `
+            <div style="max-width: 1080px; margin: 2rem auto; text-align: center;">
+              <h1 style="font-size: 1.5rem; color: #333;">Consent Required</h1>
+              <p style="font-size: 1rem; color: #666; margin: 20px 0;">
+                Without giving your consent, you can't go further.
+              </p>
+            </div>
+            <div class="redirect-timer">
+              <p style="margin-top: 115px;
+        margin-bottom: 26px;
+        font-size: 0.9rem;
+        text-align:center;
+        color: #888;">You will be redirected in <span id="countdown">3</span> seconds...</p>
+            </div>
+          `;
+
+          // Countdown timer
+          let timeLeft = 3;
+          const countdownElement = document.getElementById("countdown");
+          const countdownInterval = setInterval(() => {
+            timeLeft -= 1;
+            countdownElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+              clearInterval(countdownInterval);
+              window.close();
+            }
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>

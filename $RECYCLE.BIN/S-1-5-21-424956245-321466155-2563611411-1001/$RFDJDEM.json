@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "title": "DPDPA Compliance Fundamentals",
+    "description": "A foundational overview of the Digital Personal Data Protection Act (DPDPA) requirements.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 2,
+    "title": "Understanding the Digital Personal Data Protection Act (DPDPA)",
+    "description": "Key insights into the scope, principles, and objectives of the DPDPA.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 3,
+    "title": "Key Principles of Data Privacy and Protection",
+    "description": "Understanding the core principles that guide data privacy and protection under DPDPA.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 4,
+    "title": "Data Privacy Impact Assessment (DPIA) Essentials",
+    "description": "Exploring the importance and steps of conducting a DPIA to manage privacy risks.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 5,
+    "title": "Leadership Roles in DPDPA Compliance",
+    "description": "Defining leadership responsibilities in ensuring organizational compliance with DPDPA.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 6,
+    "title": "Onboarding Leadership for DPDPA Compliance",
+    "description": "Effective strategies to involve leadership in driving compliance initiatives.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 7,
+    "title": "Effective Budgeting for DPDPA Compliance",
+    "description": "Allocating resources and planning budgets for successful compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 8,
+    "title": "Planning and Allocating Resources for Data Privacy Initiatives",
+    "description": "Steps to strategically allocate resources for DPDPA projects.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 9,
+    "title": "Strategies for Achieving DPDPA Compliance",
+    "description": "Key strategies and best practices for organizations to achieve compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 10,
+    "title": "Legal and Operational Guidelines for DPDPA Compliance",
+    "description": "Legal and practical steps to align operations with DPDPA requirements.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 11,
+    "title": "Navigating Data Discovery and Mapping",
+    "description": "Understanding the process of identifying and mapping data for compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 12,
+    "title": "Data Mapping Best Practices for DPDPA Compliance",
+    "description": "Effective techniques for data mapping to meet DPDPA standards.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 13,
+    "title": "Essential Steps in Data Cataloguing and PII Classification",
+    "description": "Guidelines for organizing and classifying personal data and PII.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 14,
+    "title": "Classifying Personal Data and Identifying PII",
+    "description": "Techniques to accurately identify and classify sensitive personal data.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 15,
+    "title": "Analyzing Products for Data Privacy and Notice Requirements",
+    "description": "Evaluating products to ensure they meet privacy and legal notice standards.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 16,
+    "title": "Integrating Data Privacy Notices into Products",
+    "description": "Best practices for embedding privacy notices seamlessly in products.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 17,
+    "title": "Identifying Critical Points for Notice in Products",
+    "description": "Pinpointing when and where data privacy notices are necessary.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 18,
+    "title": "Consent Management Planning Across the Organization",
+    "description": "Developing a structured approach to managing user consent organization-wide.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 19,
+    "title": "Developing a Unified Consent Strategy",
+    "description": "Creating a cohesive plan for handling consents across all platforms.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 20,
+    "title": "Evaluating the Value of Data and Privacy Consents",
+    "description": "Assessing the impact of consent collection on business and compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 21,
+    "title": "Understanding the Legal Implications of Consent",
+    "description": "Legal considerations of obtaining and managing user consent.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 22,
+    "title": "Measuring ROI for Consent Management Systems",
+    "description": "Evaluating the return on investment for consent management solutions.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 23,
+    "title": "Best Practices for Collecting Consents via Model Notices",
+    "description": "Using standardized notices to improve consent collection practices.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 24,
+    "title": "Automating the Collection of Consents Across Platforms",
+    "description": "Leveraging technology to streamline consent collection processes.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 25,
+    "title": "Ensuring Consent Collection is Legally Compliant",
+    "description": "Verifying that all consent processes adhere to legal standards.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 26,
+    "title": "Integrating DPDPA Consent Notices into Digital Platforms",
+    "description": "Embedding DPDPA-compliant consent notices in digital systems.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 27,
+    "title": "Strategic Planning for DPDPA Notice Integration",
+    "description": "Developing strategies for effective notice placement and compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 28,
+    "title": "Designing Effective DPDPA Consent Notices",
+    "description": "Crafting clear and user-friendly consent notices.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 29,
+    "title": "Creating Clear and Legally Binding Consent Notices",
+    "description": "Ensuring consent notices are unambiguous and legally sound.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 30,
+    "title": "Ensuring Consent Notices Align with Data Privacy Regulations",
+    "description": "Aligning notices with DPDPA and other applicable privacy laws.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 31,
+    "title": "Consent Management SDK Integration and Best Practices",
+    "description": "Best practices for integrating consent management SDKs.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 32,
+    "title": "Building an Efficient Consent Management SDK",
+    "description": "Creating SDKs to streamline consent management across applications.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 33,
+    "title": "Understanding the Role of Consent Management SDKs in Data Privacy",
+    "description": "Exploring how SDKs facilitate compliance and user consent handling.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 34,
+    "title": "Assessing Organizational Awareness of Data Privacy",
+    "description": "Evaluating how well an organization understands and prioritizes data privacy.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 35,
+    "title": "Training Employees on DPDPA Compliance",
+    "description": "Developing employee training programs to ensure DPDPA understanding.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 36,
+    "title": "Developing a Data Privacy Training Program for Your Organization",
+    "description": "Steps to build comprehensive training on data privacy compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 37,
+    "title": "Communicating Data Privacy Policies Across the Organization",
+    "description": "Strategies for effectively sharing privacy policies with all stakeholders.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 38,
+    "title": "Identifying Organizational Challenges in Achieving DPDPA Compliance",
+    "description": "Recognizing potential hurdles and planning solutions for compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 39,
+    "title": "Building a Data Privacy Culture in Your Organization",
+    "description": "Encouraging a privacy-first mindset across all levels of the organization.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 40,
+    "title": "Evaluating the Impact of Data Privacy on Business Operations",
+    "description": "Understanding how privacy practices influence business strategies.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 41,
+    "title": "Legal Considerations for Data Processing and Consent",
+    "description": "Ensuring data processing and consent practices comply with Indian law.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 42,
+    "title": "Data Discovery and Data Mapping for Privacy Compliance",
+    "description": "Identifying and mapping data for robust privacy management.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 43,
+    "title": "Mapping Data Flows for Effective Data Privacy Management",
+    "description": "Tracking data movement to enhance privacy compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 44,
+    "title": "Data Valuation for Privacy Compliance and Strategic Advantage",
+    "description": "Assessing the value of data from privacy and business perspectives.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 45,
+    "title": "Classifying Data for Maximum Privacy Protection",
+    "description": "Organizing data to ensure comprehensive privacy measures.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 46,
+    "title": "Data Protection Impact Assessment (DPIA) for Privacy Risks",
+    "description": "Using DPIA to identify and mitigate potential privacy risks.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 47,
+    "title": "Improving Organizational Data Privacy Practices",
+    "description": "Steps to enhance data privacy practices across the organization.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 48,
+    "title": "Effective Data Management and Privacy Compliance Framework",
+    "description": "Building frameworks to integrate data management with privacy compliance.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 49,
+    "title": "Determining the Value of Data for Strategic Decision-Making",
+    "description": "Evaluating data to make informed business and compliance decisions.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  },
+  {
+    "id": 50,
+    "title": "Creating and Managing Data Privacy Notices Across Platforms",
+    "description": "Developing a consistent approach to privacy notices across digital tools.",
+    "difficulty": "Medium",
+    "timeEstimate": "20 min"
+  }
+]
