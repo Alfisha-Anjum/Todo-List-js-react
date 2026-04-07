@@ -1,0 +1,18 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch Alfisha
+# Your branch is up to date with 'origin/Alfisha'.
+#
+Changes to be committed:
+	modified:   frontend/src/context/AuthContext.jsx
+	modified:   frontend/src/pages/CreateRecipe.jsx
+	modified:   frontend/src/pages/EditRecipe.jsx
+	modified:   frontend/src/pages/Home.jsx
+	modified:   frontend/src/pages/Login.jsx
+	modified:   frontend/src/pages/Profile.jsx
+	modified:   frontend/src/pages/RecipeDetail.jsx
+	modified:   frontend/src/pages/RecipeList.jsx
+	modified:   frontend/src/pages/Register.jsx
+
